@@ -1,7 +1,7 @@
 ## Software design with Python assignments
 **Work by Alexnder Eponeshnikov**
 
-##Assignment 1
+## Assignment 1
 
 How to run:
 ```

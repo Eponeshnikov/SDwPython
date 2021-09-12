@@ -5,13 +5,13 @@ import inspect
 import os
 
 
-def fun_exec_time(**func):
+def fun_exec_time(*func):
     times = dict()
     for f in func:
         with contextlib.redirect_stdout(io.StringIO()) as f_:
             start_time = time.time()
-            func[f]()
-            times[f] = time.time() - start_time
+            f()
+            times[f.__name__] = time.time() - start_time
     times = {k: v for k, v in sorted(times.items(), key=lambda item: item[1])}
     print('Function | RANK | TIME ELAPSED')
     for i, t in enumerate(times):
@@ -30,9 +30,7 @@ class decorator_3:
                 print(p)
 
         def txt_all(name_, *params):
-            if name_ == "<lambda>":
-                name_ = "lambda"
-            filename = "txtFiles/" + name_ + ".txt"
+            filename = "txtFiles/" + name_ + "_task3.txt"
             flag = "w"
             if os.path.exists(filename):
                 flag = "a"
@@ -54,7 +52,7 @@ class decorator_3:
         args_ = f'Args:\n positional {args}\n key-worded {kwargs}'
         doc = f'Doc:\n{inspect.getdoc(self.func)}'
         source = f'Source:\n{inspect.getsource(self.func)}'
-        output = f'Output:\n {out}'
+        output = f'Output:\n{out}'
         print_all(exe_time_call, name, type_, sign, args_, doc, source, output)
         txt_all(self.func.__name__, exe_time_call, name, type_, sign, args_, doc, source, output)
 

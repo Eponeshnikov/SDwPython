@@ -18,9 +18,7 @@ class decorator_4_1:
                 print(p)
 
         def txt_all(name_, *params):
-            if name_ == "<lambda>":
-                name_ = "lambda"
-            filename = "txtFiles/" + name_ + ".txt"
+            filename = "txtFiles/" + name_ + "_task4_1.txt"
             flag = "w"
             if os.path.exists(filename):
                 flag = "a"
@@ -43,7 +41,7 @@ class decorator_4_1:
             args_ = f'Args:\n positional {args}\n key-worded {kwargs}'
             doc = f'Doc:\n{inspect.getdoc(self.func)}'
             source = f'Source:\n{inspect.getsource(self.func)}'
-            output = f'Output:\n {out}'
+            output = f'Output:\n{out}'
             print_all(exe_time_call, name, type_, sign, args_, doc, source, output)
             txt_all(self.func.__name__, exe_time_call, name, type_, sign, args_, doc, source, output)
         except Exception as e:
@@ -62,9 +60,7 @@ def decorator_4_2(f):
                 print(p)
 
         def txt_all(name_, *params):
-            if name_ == "<lambda>":
-                name_ = "lambda"
-            filename = "txtFiles/" + name_ + ".txt"
+            filename = "txtFiles/" + name_ + "_task4_2.txt"
             flag = "w"
             if os.path.exists(filename):
                 flag = "a"
@@ -87,7 +83,7 @@ def decorator_4_2(f):
             args_ = f'Args:\n positional {args}\n key-worded {kwargs}'
             doc = f'Doc:\n{inspect.getdoc(f)}'
             source = f'Source:\n{inspect.getsource(f)}'
-            output = f'Output:\n {out}'
+            output = f'Output:\n{out}'
             print_all(exe_time_call, name, type_, sign, args_, doc, source, output)
         except Exception as e:
             print("Hey, I caught an error in your function :)")

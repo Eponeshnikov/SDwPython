@@ -22,7 +22,7 @@ def decorator_2(f):
         args_ = f'Args:\n positional {args}\n key-worded {kwargs}'
         doc = f'Doc:\n{inspect.getdoc(f)}'
         source = f'Source:\n{inspect.getsource(f)}'
-        output = f'Output:\n {out}'
+        output = f'Output:\n{out}'
         print_all(exe_time_call, name, type_, sign, args_, doc, source, output)
 
     wrapper.count = 0

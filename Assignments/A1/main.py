@@ -116,6 +116,7 @@ def test_task3():
     quad_t3_time.__name__ = "quad_t3"
 
     # calculate rank table
+    # calling this function, more information will be written to the .txt file
     fun_exec_time(pascal_triangle_t3_time, sq_sol_t3_time, quad_t3_time, cube_t3_time)
 
 
@@ -152,6 +153,7 @@ def test_task4_1():
     quad_t4_time.__name__ = "quad_t4"
 
     # calculate rank table
+    # calling this function, more information will be written to the .txt file
     fun_exec_time(pascal_triangle_t4_time, sq_sol_t4_time, quad_t4_time, cube_t4_time)
 
     # test errors catching
@@ -196,6 +198,7 @@ def test_task4_2():
     quad_t4_time.__name__ = "quad_t4"
 
     # calculate rank table
+    # calling this function, more information will be written to the .txt file
     fun_exec_time(pascal_triangle_t4_time, sq_sol_t4_time, quad_t4_time, cube_t4_time)
 
     # test errors catching

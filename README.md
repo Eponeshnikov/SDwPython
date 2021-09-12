@@ -1,6 +1,8 @@
 ## Software design with Python assignments
 **Work by Alexnder Eponeshnikov**
+
 ##Assignment 1
+
 How to run:
 ```
 git clone https://github.com/Eponeshnikov/SDwPython.git

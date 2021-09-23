@@ -1,5 +1,5 @@
 ## Software design with Python assignments
-**Work by Alexnder Eponeshnikov**
+**Work by Alexander Eponeshnikov**
 
 ## Assignment 1
 

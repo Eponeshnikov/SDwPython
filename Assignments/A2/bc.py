@@ -173,7 +173,7 @@ def bc():
         -pyc src.pyc produce human-readable bytecode from python file produce human-readable bytecode from compiled .pyc file
         -s "src" produce human-readable bytecode from normal string
     compare -format src [-format src]+
-        produce bytecode comparison for giving sources (prints and saves to compare.txt)
+        produce bytecode comparison for giving sources (prints and saves to result.txt)
         (supported formats -py, -pyc, -s)
     :return: None
     """
@@ -230,7 +230,7 @@ def bc():
                 print(row_print)
         out = _f.getvalue()
         print(out)
-        txt_all(command, out)
+        txt_all("result", out)
 
 
 if __name__ == '__main__':

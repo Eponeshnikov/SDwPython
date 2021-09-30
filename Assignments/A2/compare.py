@@ -1,3 +1,6 @@
+"""
+Use python compare.py to get help
+"""
 import time
 import sys
 import io

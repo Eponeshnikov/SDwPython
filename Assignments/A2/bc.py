@@ -1,3 +1,6 @@
+"""
+Use python bc.py to get help
+"""
 import io
 import os
 import sys
@@ -8,6 +11,10 @@ import py_compile
 
 
 def parser():
+    """
+    Parsing command line
+    :return: command, flags with values
+    """
     full_cmd_arguments = sys.argv
     argument_list = full_cmd_arguments[1:]
     first_arg = None
@@ -19,6 +26,11 @@ def parser():
 
 
 def extract_opcodes(spl_data):
+    """
+    Parsing dis.dis() func
+    :param spl_data: input data
+    :return: list of opcodes with arguments
+    """
     tmp_nums = [str(i) for i in range(10)]
     opcodes = []
     for i in spl_data:
@@ -33,6 +45,11 @@ def extract_opcodes(spl_data):
 
 
 def disassemb(file):
+    """
+    Parsing dis.dis() func
+    :param file: file to parse
+    :return: list of opcodes with arguments
+    """
     with contextlib.redirect_stdout(io.StringIO()) as _f:
         dis.dis(file)
     out = _f.getvalue().split('\n')
@@ -41,6 +58,11 @@ def disassemb(file):
 
 
 def gen_opcodes_list_and_set(all_opcodes):
+    """
+    Generates list with number of opcodes and set of opcodes
+    :param all_opcodes: dict
+    :return: list with number of opcodes and set of opcodes
+    """
     uniq_opcodes = set()
     num_opcodes = []
     for code in all_opcodes:
@@ -55,6 +77,12 @@ def gen_opcodes_list_and_set(all_opcodes):
 
 
 def gen_list_4_print(num_opcodes, uniq_opcodes):
+    """
+    Generates list to print on table
+    :param num_opcodes: list of opcodes
+    :param uniq_opcodes: set of opcodes
+    :return: list to print on table
+    """
     num_opcodes = sorted(num_opcodes, key=lambda x: x[1], reverse=True)
     num_opcodes_1 = num_opcodes.copy()
     for_print = []
@@ -71,6 +99,12 @@ def gen_list_4_print(num_opcodes, uniq_opcodes):
 
 
 def gen_head(pys, length):
+    """
+    Generates head of table
+    :param pys: names of files
+    :param length: length to field
+    :return: head
+    """
     head = 'INSTRUCTION   '  # 14
     for k in pys:
         if len(k) > length:
@@ -84,6 +118,13 @@ def gen_head(pys, length):
 
 
 def gen_rows(pys, length, for_print):
+    """
+    Generates rows of table
+    :param pys: names of files
+    :param length: length to field
+    :param for_print: list to print
+    :return: rows
+    """
     rows_print = []
     for row in for_print:
         row_print = row[0][0]

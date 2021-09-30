@@ -7,7 +7,7 @@ import contextlib
 def fun_exec_time():
     """
     usage: compare.py [files]
-    This program ...
+    This program creates a neat table out of .py files execution time starting with the fastest.
     :return:
     """
     func = sys.argv[1:]
